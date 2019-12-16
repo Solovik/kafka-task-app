@@ -10,13 +10,14 @@
     <packaging>jar</packaging>
 
     <properties>
-        <hadoop-version>3.1.1</hadoop-version>
-        <!--<hadoop-version>3.1.3</hadoop-version>-->
-        <spark-version>2.3.1</spark-version>
-        <!--<spark-version>2.4.4</spark-version>-->
-        <app.main.class>com.solovik.kafkaapp.SampleYarnClient</app.main.class>
+        <app.main.class>com.solovik.kafkaapp.TwProducer</app.main.class>
         <scala.version>2.11.8</scala.version>
+        <spark-version>2.4.4</spark-version>
+        <hadoop-version>3.1.1</hadoop-version>
+        <jackson.version>2.9.10.1</jackson.version>
         <!--<scala.version>2.11.12</scala.version>-->
+        <!--<spark-version>2.3.1</spark-version>-->
+        <!--<hadoop-version>3.1.3</hadoop-version>-->
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <embedDependency>*;inline=true;scope=compile|runtime</embedDependency>
@@ -124,17 +125,17 @@
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-core</artifactId>
-                <version>2.9.5</version>
+                <version>${jackson.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
-                <version>2.9.5</version>
+                <version>${jackson.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.module</groupId>
                 <artifactId>jackson-module-scala_2.11</artifactId>
-                <version>2.9.5</version>
+                <version>${jackson.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
