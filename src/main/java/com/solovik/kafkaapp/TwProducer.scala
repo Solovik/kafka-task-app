@@ -28,7 +28,7 @@ object TwProducer {
 //    println("bootstrapServer: " + bootstrapServer + ", topic: " + topic + ", parallelism: " + parallelism)
 
 //    props.put("bootstrap.servers", bootstrapServer)
-      props.put("bootstrap.servers", "localhost:2181")
+      props.put("bootstrap.servers", "sandbox-hdp.hortonworks.com:6667")
     props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer")
     props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer")
 
