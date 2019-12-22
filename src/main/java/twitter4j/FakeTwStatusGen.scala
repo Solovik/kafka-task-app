@@ -1,15 +1,24 @@
 package twitter4j
 
+import java.util
+
 object FakeTwStatusGen {
-  def getTwStatus(): Status = {
-    new StatusJSONImpl(new JSONObject(getStrStatus(-97.51087576, 35.46500176)))
-
-
+  def getTestTwStatus(): Status = {
+    new StatusJSONImpl(new JSONObject(getRandomStrStatus()))
   }
 
-  def getStrStatus(x: Double, y: Double): String = {
-    getFirstPart + genCoordinates(x, y) + "," + genPlace("US", "United States") + getLastPart
+  def genTwStatuses(count: Int): List[Status] = {
+    List.fill(count)(new StatusJSONImpl(new JSONObject(getRandomStrStatus())))
   }
+
+
+
+  def getRandomStrStatus(): String = {
+    getFirstPart + genCoordinates(-97.51087576, 35.46500176) + "," + genPlace("US", "United States") + getLastPart
+  }
+
+
+
 
   def genCoordinates(x: Double, y: Double): String = {
     s"""{"type": "Point", "coordinates": [$x, $y]}"""
@@ -60,7 +69,7 @@ object FakeTwStatusGen {
       |  "created_at": "Mon May 06 20:01:29 +0000 2019",
       |  "id": 1125490788736032770,
       |  "id_str": "1125490788736032770",
-      |  "text": "Today's new update means that you can finally add Pizza Cat to your Retweet with comments! Learn more about this ne… https://t.co/Rbc9TF2s5X",
+      |  "text": "It is some text contain many good info about BigData, machine learning, etc.",
       |  "truncated": true,
       |  "entities": {
       |    "hashtags": [],
