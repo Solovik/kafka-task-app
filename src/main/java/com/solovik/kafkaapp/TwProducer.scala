@@ -43,7 +43,8 @@ object TwProducer {
     props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer")
     println("Going to create KafkaProducer")
     val producer = new KafkaProducer[String, String](props)
-    producer.send(new ProducerRecord[String, String](topic, s"${filtered.head.getUser.getName}", s"${filtered.length}"))
+    val first = filtered.head
+    producer.send(new ProducerRecord[String, String](topic, 1, s"${first.getId}", s"${first}"))
     producer.close()
 
     /*println("start parallel sending")
