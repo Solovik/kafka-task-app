@@ -1,7 +1,8 @@
 package twitter4j
 
-import java.util
-
+/**
+ * Generate fake Tripper's status.
+ */
 object FakeTwStatusGen {
   def getTestTwStatus(): Status = {
     new StatusJSONImpl(new JSONObject(getRandomStrStatus()))
@@ -11,14 +12,9 @@ object FakeTwStatusGen {
     List.fill(count)(new StatusJSONImpl(new JSONObject(getRandomStrStatus())))
   }
 
-
-
   def getRandomStrStatus(): String = {
     getFirstPart + genCoordinates(-97.51087576, 35.46500176) + "," + genPlace("US", "United States") + getLastPart
   }
-
-
-
 
   def genCoordinates(x: Double, y: Double): String = {
     s"""{"type": "Point", "coordinates": [$x, $y]}"""
