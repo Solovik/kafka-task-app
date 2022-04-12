@@ -13,7 +13,7 @@
         <app.main.class>com.solovik.kafkaapp.TwProducer</app.main.class>
         <scala.version>2.11.12</scala.version>
         <spark-version>2.4.4</spark-version>
-        <hadoop-version>3.1.1</hadoop-version>
+        <hadoop-version>3.2.3</hadoop-version>
         <jackson.version>2.10.1</jackson.version>
         <!--<scala.version>2.11.12</scala.version>-->
         <!--<spark-version>2.3.1</spark-version>-->
